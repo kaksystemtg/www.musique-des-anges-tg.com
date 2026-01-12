@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La Musique des Anges - L'excellence musicale à Lomé, Togo. Orchestre de prestige, sonorisation et formation.">
+    <title>La Musique des Anges | Institution Musicale de Prestige au Togo</title>
+    
+    <!-- Icônes & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- DESIGN SYSTEM (HELVETICA BOLD) --- */
+        :root {
+            --night-blue: #050A18;
+            --gold: #C5A059;
+            --emerald: #128C7E;
+            --off-white: #F9F9F9;
+            --pure-white: #FFFFFF;
+            --text-gray: #A0A5B1;
+            --helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--helvetica);
+            background-color: var(--off-white);
+            color: var(--night-blue);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.sticky {
+            padding: 15px 8%;
+            background: rgba(5, 10, 24, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .logo-box { display: flex; align-items: center; gap: 15px; text-decoration: none; color: white; }
+        .logo-svg { width: 50px; height: 50px; fill: var(--gold); }
+        .brand-text h1 { font-size: 20px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; color: white; }
+        .brand-text span { font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 4px; font-weight: 700; }
+
+        nav ul { display: flex; list-style: none; gap: 35px; }
+        nav ul li a { text-decoration: none; color: white; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+        nav ul li a:hover { color: var(--gold); }
+
+        /* --- HERO SECTION (CLÉ DE SOL) --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            background: linear-gradient(to right, rgba(5, 10, 24, 0.95) 35%, rgba(5, 10, 24, 0.3) 100%),
+                        url('https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=2070&auto=format&fit=crop') center/cover;
+            position: relative;
+        }
+
+        .hero-content { max-width: 900px; color: white; z-index: 10; }
+        .hero-content .badge { color: var(--gold); font-weight: 800; text-transform: uppercase; letter-spacing: 5px; margin-bottom: 25px; font-size: 13px; display: block; }
+        .hero-content h2 { font-size: clamp(45px, 8vw, 100px); font-weight: 900; text-transform: uppercase; line-height: 0.85; letter-spacing: -5px; margin-bottom: 35px; }
+        
+        .btn-reserve {
+            display: inline-block;
+            background: var(--emerald);
+            color: white;
+            padding: 22px 55px;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            box-shadow: 0 15px 35px rgba(18, 140, 126, 0.4);
+            transition: var(--transition);
+        }
+        .btn-reserve:hover { transform: translateY(-5px); background: #18b6a3; box-shadow: 0 20px 50px rgba(18, 140, 126, 0.6); }
+
+        /* --- SECTION À PROPOS (HISTOIRE) --- */
+        .about { padding: 120px 8%; background: var(--pure-white); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .about-text h3 { font-size: 35px; font-weight: 900; text-transform: uppercase; margin-bottom: 30px; }
+        .about-text p { font-size: 18px; color: #555; margin-bottom: 20px; }
+        .about-img { width: 100%; height: 500px; background: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop') center/cover; border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+
+        /* --- SERVICES DÉTAILLÉS --- */
+        .services { padding: 120px 8%; background: var(--night-blue); color: white; }
+        .section-header { text-align: center; margin-bottom: 100px; }
+        .section-header h2 { font-size: 45px; font-weight: 900; text-transform: uppercase; letter-spacing: -2px; }
+        .section-header .line { width: 100px; height: 5px; background: var(--gold); margin: 25px auto; }
+
+        .service-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .s-card { background: rgba(255,255,255,0.03); padding: 50px; border: 1px solid rgba(197, 160, 89, 0.2); transition: var(--transition); }
+        .s-card:hover { border-color: var(--gold); background: rgba(255,255,255,0.06); transform: translateY(-10px); }
+        .s-card i { font-size: 40px; color: var(--gold); margin-bottom: 30px; display: block; }
+        .s-card h4 { font-size: 24px; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; }
+        .s-card ul { list-style: none; margin-top: 20px; }
+        .s-card ul li { font-size: 13px; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; letter-spacing: 1px; }
+
+        /* --- SECTION RÉFÉRENCES (TRUST) --- */
+        .references { padding: 60px 8%; background: #02050C; border-bottom: 1px solid rgba(197, 160, 89, 0.1); text-align: center; }
+        .ref-logos { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; opacity: 0.6; font-weight: 900; text-transform: uppercase; font-size: 12px; letter-spacing: 3px; color: white; }
+
+        /* --- SECTION ADRESSE (LES CADRES EN LÉVITATION) --- */
+        .address-section { padding: 120px 8%; background: var(--pure-white); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .levitate-card {
+            background: var(--pure-white);
+            padding: 60px 40px;
+            border: 1px solid #EEE;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+        .levitate-card:hover {
+            transform: translateY(-35px); /* Lévitation marquée */
+            box-shadow: 0 50px 100px rgba(0,0,0,0.15);
+            border-color: var(--gold);
+        }
+        .levitate-card i { font-size: 40px; color: var(--gold); margin-bottom: 25px; }
+        .levitate-card h4 { text-transform: uppercase; letter-spacing: 2px; font-size: 15px; margin-bottom: 15px; font-weight: 900; }
+        .levitate-card p { font-size: 16px; color: #666; font-weight: 500; }
+
+        /* --- FOOTER & LÉGAL --- */
+        footer { padding: 100px 8% 50px; background: #02050C; color: white; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 80px; margin-bottom: 80px; }
+        .footer-col h5 { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; font-size: 14px; font-weight: 900; }
+        .footer-col p, .footer-col a { font-size: 14px; color: #666; text-decoration: none; display: block; margin-bottom: 15px; transition: 0.3s; }
+        .footer-col a:hover { color: var(--gold); }
+
+        .legal-footer { border-top: 1px solid #111; padding-top: 40px; display: flex; justify-content: space-between; font-size: 11px; color: #444; text-transform: uppercase; }
+
+        .whatsapp-fixed { position: fixed; bottom: 40px; right: 40px; background: #25D366; width: 75px; height: 75px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 35px; z-index: 3000; box-shadow: 0 20px 40px rgba(0,0,0,0.4); text-decoration: none; transition: 0.3s; }
+        .whatsapp-fixed:hover { transform: scale(1.1) rotate(10deg); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1024px) {
+            header nav { display: none; }
+            .about { grid-template-columns: 1fr; text-align: center; }
+            .hero-content h2 { font-size: 55px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .address-section { padding: 80px 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header id="navbar">
+        <a href="#" class="logo-box">
+            <svg class="logo-svg" viewBox="0 0 100 100">
+                <path d="M30,30 Q30,75 50,90 Q70,75 70,30" fill="none" stroke="currentColor" stroke-width="5"/>
+                <path d="M40,35 L40,80 M50,35 L50,88 M60,35 L60,80" stroke="currentColor" stroke-width="2"/>
+                <rect x="25" y="24" width="50" height="8" fill="currentColor"/>
+                <path d="M25,35 Q5,25 25,15 M75,35 Q95,25 75,15" fill="none" stroke="#C5A059" stroke-width="2.5"/>
+            </svg>
+            <div class="brand-text">
+                <h1>La Musique</h1>
+                <span>Des Anges</span>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Prestations</a></li>
+                <li><a href="#about">Notre Histoire</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO AVEC CLÉ DE SOL -->
+        <section class="hero" id="accueil">
+            <div class="hero-content">
+                <span class="badge">Adjidogomé | Lomé | Togo</span>
+                <h2>L'HARMONIE<br>ABSOLUE</h2>
+                <p style="font-size: 22px; margin-bottom: 45px; opacity: 0.9; max-width: 700px; font-weight: 300;">L'institution de référence pour l'excellence musicale au Togo. Orchestre de prestige et solutions sonores haute couture.</p>
+                <a href="https://wa.me/22891750748" class="btn-reserve">Réserver un concert</a>
+            </div>
+        </section>
+
+        <!-- REFERENCES -->
+        <div class="references">
+            <div class="ref-logos">
+                <span>Hôtel du 2 Février</span>
+                <span>Hôtel Onomo</span>
+                <span>Palais des Congrès</span>
+                <span>International Tours</span>
+            </div>
+        </div>
+
+        <!-- NOTRE HISTOIRE (PAGE 1.5) -->
+        <section class="about" id="about">
+            <div class="about-text">
+                <h3>Une Odyssée Musicale</h3>
+                <p>Née au cœur d'Adjidogomé, <strong>La Musique des Anges</strong> est le fruit d'une passion sans compromis pour la perfection acoustique. Nous ne nous contentons pas de jouer de la musique ; nous créons des héritages sonores.</p>
+                <p>Notre ancrage culturel togolais fusionne avec les standards internationaux pour offrir une expérience unique, de Kpalimé à Kara, et bien au-delà de nos frontières.</p>
+            </div>
+            <div class="about-img"></div>
+        </section>
+
+        <!-- SERVICES DÉTAILLÉS (PAGE 2) -->
+        <section class="services" id="services">
+            <div class="section-header">
+                <h2>Nos Prestations</h2>
+                <div class="line"></div>
+                <p style="max-width: 800px; margin: 0 auto; opacity: 0.7;">Chaque note est pensée pour sublimer votre événement. Découvrez nos solutions sur-mesure.</p>
+            </div>
+
+            <div class="service-box">
+                <div class="s-card">
+                    <i class="fas fa-ring"></i>
+                    <h4>Événements Privés</h4>
+                    <p>Mariages de prestige, baptêmes et sérénades. Nous transformons vos émotions en mélodies angéliques.</p>
+                    <ul>
+                        <li>• Chœur Gospel & Solistes</li>
+                        <li>• Orchestre de Marche Nuptiale</li>
+                        <li>• Animation de Réception VIP</li>
+                    </ul>
+                </div>
+                <div class="s-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h4>Solutions Business</h4>
+                    <p>Dîners de gala, cocktails d'affaires et lancements de produits. Une signature sonore pour votre image de marque.</p>
+                    <ul>
+                        <li>• Ambiance Soft Jazz & Lounge</li>
+                        <li>• Backing Band pour Artistes</li>
+                        <li>• Sonorisation de Conférences</li>
+                    </ul>
+                </div>
+                <div class="s-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Formation & Régie</h4>
+                    <p>Enseignement de haut niveau et gestion technique complète de vos séminaires internationaux.</p>
+                    <ul>
+                        <li>• Cours Piano, Chant & Guitare</li>
+                        <li>• Régie Technique & Mastering</li>
+                        <li>• Coaching Scénique Pro</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADRESSE EN LÉVITATION -->
+        <section class="address-section" id="contact">
+            <div class="levitate-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Siège Adjidogomé</h4>
+                <p>Lomé, République Togolaise<br>Zone d'Excellence</p>
+            </div>
+            <div class="levitate-card">
+                <i class="fas fa-globe-africa"></i>
+                <h4>Mobilité Totale</h4>
+                <p>Intervention : National &<br>International (Afrique/Europe)</p>
+            </div>
+            <div class="levitate-card">
+                <i class="fas fa-envelope-open-text"></i>
+                <h4>Ligne Officielle</h4>
+                <p>+228 91 75 07 48<br>kakmondialCQService7507@gmail.com</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER COMPLET -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>La Musique des Anges</h5>
+                <p>L'excellence musicale à Adjidogomé. La rigueur organisationnelle au service de l'art universel.</p>
+                <p style="color: var(--gold); font-weight: 900; margin-top: 15px;">LOMÉ - TOGO</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navigation Pro</h5>
+                <a href="#accueil">Accueil Prestige</a>
+                <a href="#services">Nos Prestations</a>
+                <a href="#about">Notre Histoire</a>
+                <a href="https://wa.me/22891750748">Demander un Devis</a>
+            </div>
+            <div class="footer-col">
+                <h5>Contact Direct</h5>
+                <p>Appel : +228 91 75 07 48</p>
+                <p>WhatsApp : +228 91 75 07 48</p>
+                <p>Email : kakmondialCQService7507@gmail.com</p>
+            </div>
+        </div>
+        <div class="legal-footer">
+            <p>&copy; 2024 La Musique des Anges. Tous droits réservés.</p>
+            <div style="display: flex; gap: 20px;">
+                <a href="#" onclick="alert('POLITIQUE DE CONFIDENTIALITÉ \n\nLes données collectées via ce site sont destinées exclusivement à l\'établissement de vos devis. Conformément à la loi togolaise, vos informations sont protégées.')">Confidentialité</a>
+                <a href="#" onclick="alert('MENTIONS LÉGALES \n\nÉditeur : La Musique des Anges \nSiège : Adjidogomé, Lomé - Togo \nHébergement : Cloud Premium Pro')">Mentions Légales</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP BOUTON -->
+    <a href="https://wa.me/22891750748" class="whatsapp-fixed" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Effet Sticky Navbar au scroll
+        window.addEventListener("scroll", function() {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>
